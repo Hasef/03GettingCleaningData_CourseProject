@@ -6,7 +6,7 @@ The script *run_analysis.R* implements the following steps:
 
  1. Load the - you could say - lookup or master data for activities and features into data tables 
     *dtActivities* and *dtFeatures* and assign meaningful variable names to those data sets 
-    (names used will be:  "activity_id", "activity_name", "feature_id", "feature_name").
+    (column names used will be:  "activity_id", "activity_name", "feature_id", "feature_name").
     
  2. Load the 3 data sets comprising the "TRAIN" data (*dtSubject_Train* represents the subjects of the observations,
  *dtActivity_Train* represents the activities of the observerations, *dtX_Train* represents the obersvations each
@@ -14,7 +14,7 @@ The script *run_analysis.R* implements the following steps:
  
  3. Analogeously load the 3 data sets comprising the "TEST" data, finally combined into *dtX_Test*.
  
- 4. Combine *dtX_Train* (of step 2) and *dtX_Test* (of step 3) into one single data set **dtX** by row-binding.
+ 4. Merge *dtX_Train* (of step 2) and *dtX_Test* (of step 3) into one single data set **dtX** by row-binding.
  
  5. Now assign meaningful variable names to the columns of *dtX*: The first two columns will be 
  named "subject_id" and "activity_id". Columns 3 to 356 will be named according to the feature names.
