@@ -1,6 +1,7 @@
 # The repository README file
-It explains the repository created for the course project of data science course "Getting and Cleaning Data"
-##Overview
+This readme file explains the rough algorithm of script **run_analysis.R** developed
+as a solution for the Course Project of the "Getting and Cleaning Data" course.
+
 The script *run_analysis.R* implements the following steps:
 
  1. Load the - you could say - lookup or master data for activities and features into data tables 
