@@ -18,7 +18,7 @@ measurments of various features w.r.t. *its* (subject\_id, activity\_name) combi
 
 
 
-tBodyAcc-mean()-X .. fBodyBodyGyroJerkMag-std()
+MEANOF\_\_\* columns (MEANOF\_\_tBodyAcc-mean()-X .. MEANOF\_\_MEAfBodyBodyGyroJerkMag-std()
 
 * numeric values between -1 and +1 
 

@@ -1,6 +1,15 @@
+################################################################################
+# Script:      run_analysis.R
+# Author:      Hasef
+# Created:     17.06.2015
+# For Details: cf. https://github.com/Hasef/03GettingCleaningData_CourseProject
+################################################################################
+
 library(data.table)
 library(dplyr)
 library(plyr)
+
+# First clean up all variables in Environment:
 rm(list=ls())
 
 # (1) Load the data sets representing a kind of "master data"
@@ -69,6 +78,14 @@ result <- dtX %>%
         summarise_each(funs(mean)) %>%
         arrange(subject_id, activity_name)
 
-# (9) Finally write the "result" data set as a txt file created with write.table() using row.name=FALSE
+# (9) Since starting with column 3 all feature-based columns are containing
+#     MEAN-values now each columnname will be prefixed with "MEANOF__" to
+#     make this more clearly:
+X <- names(result)   
+Y <- X[3:length(X)]
+Y <- sapply(Y, function(varname) paste("MEANOF__", varname, sep=""), USE.NAMES=FALSE)
+setnames(result, 3:length(names(result)), Y)
+
+# (10) Finally write the "result" data set as a txt file created with write.table() using row.name=FALSE
 #     to disk:
 write.table (result, file="result_coursproject_03_getting_and_cleaning_data.txt", row.names=FALSE)

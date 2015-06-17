@@ -88,10 +88,14 @@ The script *run\_analysis.R* implements the following steps:
     
  8. Using the *dplyr* package chaining operator "%>%" we first group the table *dtX* by columns "subject\_id" and "activity\_name".
  Then we use the *summarise\_each()* function to get the mean for **each** mean/std-measurement-column of *dtX* w.r.t.each existing
- subject\_id/acitivity\_name combination. This data set again will be ordered by subject\_id, followed by activity\_name.
- This returns the final, independent tidy data set, that we aimed for. It is assigend to variable **result**.
+ subject\_id/acitivity\_name combination. This data set again will be ordered by subject\_id, followed by activity\_name. Finally
+ the data set will be assigned to variable **result**.
+ 
+ 9. Since starting with column 3 of *result* all feature-based columns are containing MEAN-values now each columnname 
+ will be "improved" by prefixing it with string "MEANOF\_\_" to make the MEAN-characteristic of its column values more clearly:
+ This returns the final, independent tidy data set, that we aimed for, and being stored in variable **result**.
   
- 9.  Finally the resulting tidy data set stored in *result* will be written to disk using the *write.table()* function.
+ 10.  Finally the resulting tidy data set stored in *result* will be written to disk using the *write.table()* function.
  The name of the resulting file containing the tidy data set is *result\_coursproject\_03\_getting\_and\_cleaning\_data.txt*. This file is contained in the repository, too!
  
 [1]: https://github.com/Hasef/03GettingCleaningData_CourseProject
